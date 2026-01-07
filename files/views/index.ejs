@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scatch | Auth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="relative">
+
+    <!-- ERROR MESSAGE -->
+    <% if (error && error.length > 0) { %>
+        <div class="absolute top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-md bg-red-500">
+            <span class="text-white font-medium">
+                <%= error %>
+            </span>
+        </div>
+    <% } %>
+
+    <div class="w-full h-screen flex px-20">
+
+        <!-- REGISTER -->
+        <div class="w-1/2 flex items-center justify-center h-screen">
+            <div class="w-full px-32">
+                <h3 class="text-4xl mb-1">
+                    Welcome to <span class="text-blue-400 font-semibold">Scatch</span>
+                </h3>
+                <h4 class="text-2xl mb-5">Create your account</h4>
+
+                <form autocomplete="off" action="/users/register" method="post">
+                    <input
+                        class="bg-zinc-100 block w-full px-3 py-2 border rounded-md mb-3"
+                        type="text"
+                        placeholder="Full Name"
+                        name="fullname"
+                        required
+                    >
+
+                    <input
+                        class="bg-zinc-100 block w-full px-3 py-2 border rounded-md mb-3"
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        required
+                    >
+
+                    <input
+                        class="bg-zinc-100 block w-full px-3 py-2 border rounded-md mb-3"
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        required
+                    >
+
+                    <input
+                        class="px-6 rounded-full py-3 mt-2 bg-blue-500 text-white cursor-pointer"
+                        type="submit"
+                        value="Create My Account"
+                    >
+                </form>
+            </div>
+        </div>
+
+        <!-- LOGIN -->
+        <div class="w-1/2 flex items-center justify-center h-screen">
+            <div class="w-full px-32">
+                <h4 class="text-2xl capitalize mb-5">Login your account</h4>
+
+                <form autocomplete="off" action="/users/login" method="post">
+                    <input
+                        class="bg-zinc-100 block w-full px-3 py-2 border rounded-md mb-3"
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        required
+                    >
+
+                    <input
+                        class="bg-zinc-100 block w-full px-3 py-2 border rounded-md mb-3"
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        required
+                    >
+
+                    <input
+                        class="px-6 block rounded-full py-3 mt-2 bg-blue-500 text-white cursor-pointer"
+                        type="submit"
+                        value="Login"
+                    >
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+
